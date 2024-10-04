@@ -6,10 +6,13 @@ COPY . /app
 WORKDIR /app
 
 # Install dependencies
-RUN pip install -r requirements.txt 
+RUN pip install --no-cache-dir -r requirements.txt 
 
-# Install pytest for running tests
-RUN pip install pytest
+# Install pytest for running tests (if needed)
+RUN pip install --no-cache-dir pytest
+
+# Install bash (optional, if you want to use bash)
+RUN apk add --no-cache bash
 
 # Expose port 5000
 EXPOSE 5000 
