@@ -1,4 +1,14 @@
-# tests/test_app.py
+import unittest
+from application import app
 
-def test_sample():
-    assert True  # This will always pass
+class TestApp(unittest.TestCase):
+
+    def setUp(self):
+        self.app = app.test_client()
+
+    def test_hello_world(self):
+        response = self.app.get('/')
+        self.assertEqual(response.data, b'Hello Tamanna!')
+
+if __name__ == '__main__':
+    unittest.main()
