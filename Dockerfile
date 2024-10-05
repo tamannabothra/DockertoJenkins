@@ -18,5 +18,5 @@ RUN apk add --no-cache bash
 EXPOSE 5000 
 
 # Set the entry point and default command
-ENTRYPOINT [ "python" ] 
-CMD [ "app.py" ]
+
+CMD ["python" , "app.py" ]
