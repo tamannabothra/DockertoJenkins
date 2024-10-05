@@ -1,22 +1,11 @@
-# Use the official Python image from Docker Hub
-FROM python:alpine3.7 
+FROM python:3-alpine3.15
 
-# Copy application files to /app directory in the container
-COPY . /app
 WORKDIR /app
 
-# Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt 
+COPY . /app
 
-# Install pytest for running tests (if needed)
-RUN pip install --no-cache-dir pytest
+RUN pip install -r requirements.txt
 
-# Install bash (optional, if you want to use bash)
-RUN apk add --no-cache bash
+EXPOSE 5000
 
-# Expose port 5000
-EXPOSE 5000 
-
-# Set the entry point and default command
-
-CMD ["python" , "app.py" ]
+CMD ["python", "app.py"]
