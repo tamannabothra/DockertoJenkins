@@ -8,7 +8,7 @@ class TestApp(unittest.TestCase):
 
     def test_hello_world(self):
         response = self.app.get('/')
-        self.assertEqual(response.data, b'Hello Tamanna!')
+        self.assertEqual(response.data, b'Hello, World from Flask inside Docker!')
 
 if __name__ == '__main__':
     unittest.main()
